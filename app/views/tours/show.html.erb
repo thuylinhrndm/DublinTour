@@ -1,0 +1,24 @@
+
+<div class="large-12 columns">
+<div class="form-style-8">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tourtype:</strong>
+  <%= @tour.tourtype %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @tour.day %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @tour.time %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>
+</div>
+</div>

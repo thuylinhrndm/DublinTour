@@ -1,0 +1,34 @@
+
+<div class="small-12 columns">
+<div class="form-style-9">
+<h1>Listing tours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tour Type</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tours.each do |tour| %>
+      <tr>
+        <td><%= tour.tourtype %></td>
+        <td><%= tour.day %></td>
+        <td><%= tour.time %></td>
+        <td><%= link_to 'Show', tour %></td>
+        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+        <td><%= button_to 'Destroy', tour, method: :delete, class: 'small button round', data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tour', new_tour_path, class: 'small button round' %>
+</div>
+</div>

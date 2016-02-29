@@ -1,0 +1,28 @@
+<div class="small-12 columns">
+<div class="form-style-8">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @profile.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @profile.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @profile.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @profile.phone %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+</div>
+</div>

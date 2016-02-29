@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Dublin Tour Guide" %></title>
+
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "default" 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+ 
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+ <nav class="menu">
+  <h1 class="name"><i class="fi-widget"></i> Dublin Tour Guide</a></h1>
+  <ul class="inline-list">
+    <% if user_signed_in? %>
+    <li><%= link_to "My Profile", profiles_path %></li>
+    <li><%= link_to "Profile Setting", edit_user_registration_path %></li>
+    <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+    <li><%= link_to "Sign up now", new_user_registration_path %></li>
+    <li><%= link_to "Log In", new_user_session_path %></li>
+    <% end %>
+    
+  </ul>
+
+<ul class="inline-list hide-for-small-only account-action"></ul>
+<ul class="inline-list">
+   
+  <li><%= text_field_tag :search, params[:search]  %></li>
+  <li ><%= submit_tag "Search", :name => nil , class: 'small button round'%></li>
+  
+</ul>
+
+</nav>
+<header class="header">
+
+  <h1 class="main-header">Dublin Tour Guide</h1>
+   
+  <ul class="header-subnav">
+  
+    <li><%= link_to 'New Tour', new_tour_path %></li>
+    <li><%= link_to "Tour", tours_path  %> </li>
+    <li><a target="_blank" href="http://zurb.com/responsive">Just do it!</a></li>
+  </ul>
+</header>
+
+
+<br/>
+		<div>
+			<% if notice || alert %>
+			<%= "#{notice || ""}#{alert || ""}" %>
+			<% end %>
+		</div>
+ 
+
+
+    <%= yield %>
+
+
+
+
+
+  </body>
+</html>

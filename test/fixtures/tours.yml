@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tourtype: MyString
+  day: 2016-02-13
+  time: 2016-02-13 17:56:58
+
+two:
+  tourtype: MyString
+  day: 2016-02-13
+  time: 2016-02-13 17:56:58
