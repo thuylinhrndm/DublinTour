@@ -52,6 +52,9 @@ gem 'devise'
 
 # font-end
 gem 'foundation-rails', '5.4.3'
+group :development do
+  gem 'rails_layout'
+end
 
 
 
