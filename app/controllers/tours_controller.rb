@@ -1,3 +1,6 @@
+require 'tours'
+require 'tour_logger'
+
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +27,33 @@ class ToursController < ApplicationController
   # POST /tours
   # POST /tours.json
   def create
-    @tour = Tour.new(tour_params)
+    @tour = Tour.new()
+    @tour.tourtype = params[:tour][:tourtype]
+    @tour.day = Date.new(params[:tour]["day(1i)"].to_i,params[:tour]["day(2i)"].to_i,params[:tour]["day(3i)"].to_i)
+    @tour.time = params[:tour][:time]
+    
+      # create an instance/object of a BasicTour
+      mytour = BasicTour.new(@tour.tourtype, @tour.day, @tour.time)
+    
+    # add the extra features to the new tour
+    if params[:tour][:audio].to_s.length > 0 then
+        mytour = AudioGuide.new(mytour)
+    end
+    
+    # add the extra features to the new car
+    if params[:tour][:interest].to_s.length > 0 then
+        mytour = TicketInterestPlace.new(mytour)
+    end
+    
+    ## populate the cost and the description details
+   @tour.cost = mytour.cost
+   @tour.description = mytour.details
+  
+    
+     # retrieve the instance/object of the TourLogger class
+    logger = TourLogger.instance
+    logger.logInformation("A new tour added: " + @tour.description)
+    
 
     respond_to do |format|
       if @tour.save

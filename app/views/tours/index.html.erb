@@ -9,6 +9,7 @@
       <th>Tour Type</th>
       <th>Day</th>
       <th>Time</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
         <td><%= tour.tourtype %></td>
         <td><%= tour.day %></td>
         <td><%= tour.time %></td>
+        <td><%= tour.description %></td>
         <td><%= link_to 'Show', tour %></td>
         <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
         <td><%= button_to 'Destroy', tour, method: :delete, class: 'small button round', data: { confirm: 'Are you sure?' } %></td>
