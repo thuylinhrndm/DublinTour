@@ -3,6 +3,7 @@ require 'tour_logger'
 
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /tours
   # GET /tours.json

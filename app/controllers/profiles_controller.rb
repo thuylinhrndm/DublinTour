@@ -2,6 +2,18 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
+  
+  def signedinuserprofile 
+    profile = Profile.find_by_user_id(current_user.id) 
+    if profile.nil?
+      redirect_to "/profiles/new"
+    else
+       @profile = Profile.find_by_user_id(current_user.id) 
+      redirect_to "/profiles/#{@profile.id}" 
+    end
+  end
+  
+  
 
   def index
     @profiles = Profile.all
@@ -13,8 +25,14 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = Profile.new
-    respond_with(@profile)
+   @profile = Profile.new 
+   @profile.user_id = current_user.id
+
+    respond_to do |format|
+    format.html # new.html.erb 
+    format.json { render json: @profile } 
+    end
+
   end
 
   def edit
@@ -42,6 +60,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :email, :phone)
+      params.require(:profile).permit(:firstname, :lastname, :address, :user_id)
     end
 end

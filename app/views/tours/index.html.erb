@@ -1,6 +1,7 @@
-
 <div class="small-12 columns">
-<div class="form-style-9">
+<% if user_signed_in? %> 
+<div class="form-style-8">
+  
 <h1>Listing tours</h1>
 
 <table>
@@ -29,8 +30,10 @@
   </tbody>
 </table>
 
+
 <br>
 
-<%= link_to 'New Tour', new_tour_path, class: 'small button round' %>
+<!--<%= link_to 'New Tour', new_tour_path, class: 'small button round' %>-->
 </div>
 </div>
+<% end %>

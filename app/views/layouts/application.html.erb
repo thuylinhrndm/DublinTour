@@ -24,9 +24,10 @@
   <h1 class="name"><i class="fi-widget"></i> Dublin Tour Guide</a></h1>
   <ul class="inline-list">
     <% if user_signed_in? %>
+    <li style="color:white">Signed in as: <%= current_user.email %></li>
     <li><%= link_to "My Profile", profiles_path %></li>
     <li><%= link_to "Profile Setting", edit_user_registration_path %></li>
-    <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    <li><%= button_to "Sign Out", destroy_user_session_path, class: 'small button round', method: :delete %></li>
     <% else %>
     <li><%= link_to "Sign up now", new_user_registration_path %></li>
     <li><%= link_to "Log In", new_user_session_path %></li>
@@ -44,14 +45,14 @@
 
 </nav>
 <header class="header">
-
-  <h1 class="main-header">Dublin Tour Guide</h1>
+<!--"https://static.pexels.com/photos/6894/summer-photographer-pier-adventure-large.jpg"-->
+  <h1 class="main-header">Dublin Tour Guide</h1></br></br>
    
   <ul class="header-subnav">
-  
-    <li><%= link_to 'New Tour', new_tour_path %></li>
-    <li><%= link_to "Tour", tours_path  %> </li>
-    <li><a target="_blank" href="http://zurb.com/responsive">Just do it!</a></li>
+     <li><%= link_to "Home", home_index_path %></li>
+    <li><%= link_to 'Book A Tour', new_tour_path %></li>
+    <li><%= link_to "View Your Tour", tours_path  %> </li>
+   
   </ul>
 </header>
 
@@ -66,10 +67,8 @@
 
 
     <%= yield %>
-
-
-
-
+    
+  
 
   </body>
 </html>
