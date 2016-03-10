@@ -23,10 +23,10 @@
         <td><%= tour.time %></td>
         <td><%= tour.description %></td>
         <td><%= link_to 'Show', tour %></td>
-        <% if current_user.admin? %>
+       <% if current_user.admin? %>
         <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
         <td><%= button_to 'Destroy', tour, method: :delete, class: 'small button round', data: { confirm: 'Are you sure?' } %></td>
-         <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
