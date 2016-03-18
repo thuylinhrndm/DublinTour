@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
  
-
+  post 'tours/new'
   resources :profiles
 
   get 'home/index'
-
+  get 'my_tours', to: 'tours#my_tours', as: 'my_tours'
+  
   devise_for :users
   resources :tours
 
   get 'signup' => 'users#new'
   get 'app/tours'
-   get '/signedinuserprofile' => 'profiles#signedinuserprofile'
+  get '/signedinuserprofile' => 'profiles#signedinuserprofile'
   
   root to: 'home#index'
 

@@ -16,7 +16,7 @@ class BasicTour
     
 	
 	def details
-		return @description + ": #{@cost}; " + @tourtype + "; " + @day.to_s + " ;" + @time.to_s
+		return @description + ": #{@cost}; " + " Tour: " + @tourtype + "; Day: " + @day.to_s + " ; Start at : " + @time.strftime("%H:%M %p")	
 	end	
 end
 
@@ -53,7 +53,33 @@ class AudioGuide < TourDecorator
 end
 
 
-# another concrete decorator
+# Ticket for interest place
+class TicketInterestPlace < TourDecorator
+	def initialize(basic_tour)
+		super(basic_tour)
+		@description = "ticket for places of interest"
+		@extraCost = 10
+	
+	end
+	
+	def details
+		return @description + ": #{@extraCost} + " + @basic_tour.details  
+	end	
+end
+# Hotel pickup and drop-off
+class PickUpDropOff < TourDecorator
+	def initialize(basic_tour)
+		super(basic_tour)
+		@description = "Hotel pickup and drop-off"
+		@extraCost = 10
+	
+	end
+	
+	def details
+		return @description + ": #{@extraCost} + " + @basic_tour.details  
+	end	
+end
+#
 class TicketInterestPlace < TourDecorator
 	def initialize(basic_tour)
 		super(basic_tour)

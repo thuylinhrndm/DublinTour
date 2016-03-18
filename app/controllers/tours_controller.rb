@@ -2,8 +2,9 @@ require 'tours'
 require 'tour_logger'
 
 class ToursController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :new]
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user! 
+  # before_filter :authenticate_user! 
   before_filter :ensure_admin, :only => [:edit, :destroy]
 
 
@@ -12,12 +13,15 @@ class ToursController < ApplicationController
       render :text => "Access Error Message", :status => :unauthorized
     end
   end
-
+  
+  def my_tours
+    @tours = Tour.where(user_id: current_user.id).order(created_at: :desc)
+  end
 
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @tours = Tour.all.order(created_at: :desc)
   end
 
   # GET /tours/1
@@ -38,6 +42,9 @@ class ToursController < ApplicationController
   # POST /tours.json
   def create
     @tour = Tour.new()
+    @tour.firstname = params[:tour][:firstname]
+    @tour.lastname = params[:tour][:lastname]
+    @tour.user_id = params[:tour][:user_id]
     @tour.tourtype = params[:tour][:tourtype]
     @tour.day = Date.new(params[:tour]["day(1i)"].to_i,params[:tour]["day(2i)"].to_i,params[:tour]["day(3i)"].to_i)
     @tour.time = params[:tour][:time]
@@ -50,9 +57,14 @@ class ToursController < ApplicationController
         mytour = AudioGuide.new(mytour)
     end
     
-    # add the extra features to the new car
+    # add the extra features to the new tour
     if params[:tour][:interest].to_s.length > 0 then
         mytour = TicketInterestPlace.new(mytour)
+    end
+    
+     # add the extra features to the new tour
+    if params[:tour][:pick_drop].to_s.length > 0 then
+        mytour = PickUpDropOff.new(mytour)
     end
     
     ## populate the cost and the description details
@@ -105,9 +117,11 @@ class ToursController < ApplicationController
     def set_tour
       @tour = Tour.find(params[:id])
     end
-
+    
+   
+   
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:tourtype, :day, :time)
+      params.require(:tour).permit(:firstname, :lastname, :tourtype, :day, :time)
     end
 end

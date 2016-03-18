@@ -1,5 +1,4 @@
 <div class="small-12 columns">
-<% if user_signed_in? %> 
 <div class="form-style-8">
   
 <h1>Listing tours</h1>
@@ -21,8 +20,8 @@
       <tr>
         <td><%= tour.firstname%> <%= tour.lastname%></td>
         <td><%= tour.tourtype %></td>
-        <td><%= tour.day.strftime("%d %b %Y") %></td>
-        <td><%= tour.time.strftime("%H:%M %p")  %></td>
+        <td><%= tour.day %></td>
+        <td><%= tour.time %></td>
         <td><%= tour.description %></td>
         <td><%= link_to 'Show', tour %>
        <% if current_user.admin? %>
@@ -40,4 +39,4 @@
 <!--<%= link_to 'New Tour', new_tour_path, class: 'small button round' %>-->
 </div>
 </div>
-<% end %>
+

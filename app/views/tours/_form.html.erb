@@ -10,6 +10,22 @@
       </ul>
     </div>
   <% end %>
+  <div class="section"><span>1</span>Customer Information </div>
+  <div class="inner-wrap">
+    <div class="field">
+    <%= f.label :firstname, "First Name" %><br>
+    <%= f.text_field :firstname %>
+  </div>
+    <div class="field">
+    <%= f.label :lastname, "Last Name" %><br>
+    <%= f.text_field :lastname %>
+    </div>
+      <div class="field">
+      <%= f.hidden_field :user_id %>
+      </div>
+  
+  </div>
+  
   <div class="section"><span>1</span>Tour Type </div>
   <div class="inner-wrap">
      <!--<%= f.label :tourtype, "Tour Type" %><br>-->
@@ -24,7 +40,7 @@
   
   <div class="section"><span>3</span> Time </div>
   <div class="inner-wrap">
-    <!--<%= f.label :time, "Time" %><br>-->
+    <p>Duration - 7hrs</p>
     <%= f.select :time, Tour::TIMES %>
   </div>
   <div class="field">
@@ -36,7 +52,8 @@
     <%= f.hidden_field :cost %>
   </div>
    <div class="field"> Audio: <%= check_box_tag 'tour[audio]', 'audio' %></div>
-  <div class="field"> Book Interest Place: <%= check_box_tag 'tour[interest]', 'interest' %></div>
+  <div class="field"> Ticket for Interest Place: <%= check_box_tag 'tour[interest]', 'interest' %></div>
+  <div class="field"> Hotel pickup and drop-off <%= check_box_tag 'tour[pick_drop]', 'pick_drop' %></div>
   <div class="actions">
     <%= f.submit %>
   </div>
