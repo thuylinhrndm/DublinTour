@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          has_many :tours
          has_one :profile
+         
+         validates_uniqueness_of :email
 end
