@@ -70,6 +70,10 @@
 
     <%= yield %>
     
+    <% if current_user && current_user.admin == true %>
+    <p>I am an admin</p>
+    <% end %>
+    
   
 
   </body>

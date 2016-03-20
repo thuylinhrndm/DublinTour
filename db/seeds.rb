@@ -11,5 +11,5 @@ User.delete_all
 
 # add admin user first
 password = '12345678'
-admin = User.new email: 'admin@email.ie', password: password, password_confirmation: password 
+admin = User.new email: 'admin@email.ie', password: password, password_confirmation: password, admin: true 
 admin.save
