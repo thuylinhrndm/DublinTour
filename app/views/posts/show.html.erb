@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Post in <%= @tour.tourtype %></h1>
+<p>
+<%= @post.post_message %>
+</p>
+<%= link_to 'Edit', edit_tour_post_path(@tour, @post) %> |
+<%= link_to 'Back', tour_posts_path(@tour) %>
+
+
+

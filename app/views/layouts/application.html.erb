@@ -50,10 +50,15 @@
   <h1 class="main-header">Dublin Tour Guide</h1></br></br>
    
   <ul class="header-subnav">
+    
      <li><%= link_to "Home", home_index_path %></li>
     <li><%= link_to 'Book A Tour', new_tour_path %></li>
+    <% if current_user %>
     <li><%= link_to "View Your Tour", my_tours_path  %> </li>
+    <% end %>
+   <% if current_user && current_user.admin == true %>
     <li><%= link_to "All Tour", tours_path  %> </li>
+    <% end %>
    
   </ul>
 </header>
@@ -70,9 +75,7 @@
 
     <%= yield %>
     
-    <% if current_user && current_user.admin == true %>
-    <p>I am an admin</p>
-    <% end %>
+ 
     
   
 

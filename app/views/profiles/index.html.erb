@@ -1,5 +1,5 @@
 <div class="small-12 columns">
-<div class="form-style-8">
+<div class="form-style-9">
 <h1>Listing profiles</h1>
 
 <table>
@@ -22,7 +22,7 @@
         <td><%= profile.user %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,7 +30,7 @@
 
 <br>
 
-<%= link_to 'New Profile', new_profile_path %>
+<!--<%= link_to 'New Profile', new_profile_path %>-->
 </div>
 </div>
 

@@ -2,7 +2,7 @@ require 'tours'
 require 'tour_logger'
 
 class ToursController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :new]
+  before_action :authenticate_user!, except: [:index]
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
   # before_filter :authenticate_user! 
   before_filter :ensure_admin, :only => [:edit, :destroy]

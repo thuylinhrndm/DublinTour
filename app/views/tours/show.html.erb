@@ -1,38 +1,55 @@
-
 <div class="large-12 columns">
-<div class="form-style-8">
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>First Name:</strong>
-  <%= @tour.firstname %>
-</p>
-<p>
-  <strong>Last Name:</strong>
-  <%= @tour.lastname %>
-</p>
-<p>
-  <strong>Tour Type:</strong>
-  <%= @tour.tourtype %>
-</p>
+<div class="form-style-10">
+  <p id="notice"><%= notice %></p>
+  <h1>View Tour</h1>
+  <p>
+    <strong>First Name:</strong>
+    <%= @tour.firstname %>
+  </p>
+  <p>
+    <strong>Last Name:</strong>
+    <%= @tour.lastname %>
+  </p>
+  <p>
+    <strong>Tour Type:</strong>
+    <%= @tour.tourtype %>
+  </p>
+  
+  <p>
+    <strong>Day:</strong>
+    <%= @tour.day.strftime("%d %b %Y") %>
+  </p>
+  
+  <p>
+    <strong>Time Start:</strong>
+    <%= @tour.time.strftime("%H:%M %p") %>
+  </p>
+  <p>
+    <strong>Cost:</strong>
+    <%= @tour.cost %>
+  </p>
+  <p>
+  <strong>Description:</strong>
+    <%= @tour.description %>
+  </p>
+  
+  <%= link_to 'Edit', edit_tour_path(@tour) %> |
+  <%= link_to 'Back', tours_path %>
 
-<p>
-  <strong>Day:</strong>
-  <%= @tour.day.strftime("%d %b %Y") %>
-</p>
+</div>
 
+
+<div class="form-style-10">
+<!-- Display the posts of a tour -->
+<h1>Reviews on <%= @tour.tourtype %></h1>
+<% @tour.posts.each do |p| %>
 <p>
-  <strong>Time Start:</strong>
-  <%= @tour.time.strftime("%H:%M %p") %>
+<b>Message:</b>
+<%= p.post_message %>
 </p>
-<p>
-  <strong>Cost:</strong>
-  <%= @tour.cost %>
-</p>
-<p>
-<strong>Description:</strong>
-  <%= @tour.description %>
-</p>
-<%= link_to 'Edit', edit_tour_path(@tour) %> |
-<%= link_to 'Back', tours_path %>
+<% end %>
+<%= link_to 'New Post', new_tour_post_path(@tour)%> |
+<%= link_to 'Show posts', tour_posts_path(@tour) %>
+
 </div>
 </div>

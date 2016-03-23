@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   resources :users, only: [:index] 
   post 'tours/new'
   resources :profiles
@@ -6,9 +8,13 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'my_tours', to: 'tours#my_tours', as: 'my_tours'
   
+ 
   devise_for :users
-  resources :tours
-
+  
+  resources :tours do
+      resources :posts
+  end
+  
   get 'signup' => 'users#new'
   get 'app/tours'
   get '/signedinuserprofile' => 'profiles#signedinuserprofile'

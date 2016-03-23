@@ -1,5 +1,5 @@
 <div class="small-12 columns">
-<div class="form-style-8">
+<div class="form-style-9">
   
 <h1>Listing tours</h1>
 
@@ -20,11 +20,11 @@
       <tr>
         <td><%= tour.firstname%> <%= tour.lastname%></td>
         <td><%= tour.tourtype %></td>
-        <td><%= tour.day %></td>
-        <td><%= tour.time %></td>
+         <td><%= tour.day.strftime("%d %b %Y") %></td>
+        <td><%= tour.time.strftime("%H:%M %p")  %></td>
         <td><%= tour.description %></td>
         <td><%= link_to 'Show', tour %>
-       <% if current_user.admin? %>
+        <% if current_user.admin? %> 
        | <%= link_to 'Edit', edit_tour_path(tour) %>
         <%= button_to 'Destroy', tour, method: :delete, class: 'small button round', data: { confirm: 'Are you sure?' } %></td>
         <% end %>

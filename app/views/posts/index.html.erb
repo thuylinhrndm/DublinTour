@@ -1,0 +1,31 @@
+<div class="small-12 columns">
+<div class="form-style-9">
+<h1>Listing Posts in <%= @tour.tourtype %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post message</th>
+      <th>Tour</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.post_message %></td>
+        <td><%= post.tour.tourtype %></td>
+        <td><%= link_to 'Show', tour_posts_path(@tour, post) %> |
+        <%= link_to 'Edit', edit_tour_post_path(@tour, post) %> |
+        <%= button_to 'Destroy', tour_post_path(@tour,post), class: 'small button round', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_tour_post_path(@tour)%> | <%= link_to 'Back to Tour', my_tours_path  %>
+</div>
+</div>

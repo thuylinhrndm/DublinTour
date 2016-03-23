@@ -20,6 +20,7 @@ class BasicTour
 	end	
 end
 
+
 class TourDecorator
 	def initialize(basic_tour)
 		@basic_tour = basic_tour

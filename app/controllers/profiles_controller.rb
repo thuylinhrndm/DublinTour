@@ -9,12 +9,12 @@ class ProfilesController < ApplicationController
       redirect_to "/profiles/new"
     else
        @profile = Profile.find_by_user_id(current_user.id) 
-      redirect_to "/profiles/#{@profile.id}" 
+        redirect_to "/profiles/#{@profile.id}" 
     end
   end
   
   
-
+  
   def index
     @profiles = Profile.all
     respond_with(@profiles)
