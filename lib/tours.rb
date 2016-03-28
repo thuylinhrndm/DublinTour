@@ -80,7 +80,7 @@ class PickUpDropOff < TourDecorator
 		return @description + ": #{@extraCost} + " + @basic_tour.details  
 	end	
 end
-#
+# ticket for interest place
 class TicketInterestPlace < TourDecorator
 	def initialize(basic_tour)
 		super(basic_tour)

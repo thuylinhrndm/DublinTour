@@ -23,5 +23,9 @@ module DublinTour
   "#{Gem.loaded_specs['foundation-rails'].full_gem_path}/vendor/assets/stylesheets/foundation/components",
   "#{Gem.loaded_specs['foundation-rails'].full_gem_path}/vendor/assets/stylesheets/foundation/"
 ]
+
+  #config.active_record.observers = :model1_observer, :model2_observer 
+  config.active_record.observers = :tour_observer
+
   end
 end

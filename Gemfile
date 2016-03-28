@@ -14,6 +14,7 @@ end
 
 gem 'rdoc-data', '~> 4.1'
 
+gem 'rails-observers'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

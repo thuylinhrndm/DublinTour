@@ -23,7 +23,7 @@ class ToursController < ApplicationController
   def index
     @tours = Tour.all.order(created_at: :desc)
   end
-
+  
   # GET /tours/1
   # GET /tours/1.json
   def show
@@ -74,7 +74,9 @@ class ToursController < ApplicationController
     
      # retrieve the instance/object of the TourLogger class
     logger = TourLogger.instance
+    logger.logInformation("----")
     logger.logInformation("A new tour added: " + @tour.description)
+     logger.logInformation("----")
     
 
     respond_to do |format|
@@ -91,14 +93,69 @@ class ToursController < ApplicationController
   # PATCH/PUT /tours/1
   # PATCH/PUT /tours/1.json
   def update
-    respond_to do |format|
-      if @tour.update(tour_params)
+    # update the instance variables with the information
+    # user provided in the form
+    # retrieve each value from the params hash
+    
+    @tour.firstname = params[:tour][:firstname]
+    @tour.lastname = params[:tour][:lastname]
+    @tour.user_id = params[:tour][:user_id]
+    @tour.tourtype = params[:tour][:tourtype]
+    @tour.day = Date.new(params[:tour]["day(1i)"].to_i,params[:tour]["day(2i)"].to_i,params[:tour]["day(3i)"].to_i)
+    @tour.time = params[:tour][:time]
+    
+    # create an instance/object of a BasicTour
+     mytour = BasicTour.new(@tour.tourtype, @tour.day, @tour.time)
+   
+    # add the extra features to the new tour
+    if params[:tour][:audio].to_s.length > 0 then
+        mytour = AudioGuide.new(mytour)
+    end
+    
+    # add the extra features to the new tour
+    if params[:tour][:interest].to_s.length > 0 then
+        mytour = TicketInterestPlace.new(mytour)
+    end
+    
+     # add the extra features to the new tour
+    if params[:tour][:pick_drop].to_s.length > 0 then
+        mytour = PickUpDropOff.new(mytour)
+    end
+    
+    # update the cost and the description details
+    @tour.cost = mytour.cost
+    @tour.description = mytour.details
+  
+    # build a hash with the updated information of the tour
+    
+    updated_information = {
+    "firstname" => @tour.firstname,
+    "lastname" => @tour.lastname,
+    "tourtype" => @tour.tourtype,
+    "day" => @tour.day,
+    "time" => @tour.time,
+    "cost" => @tour.cost,
+    "description" => @tour.description
+   
+      }
+      
+      respond_to do |format|
+      if @tour.update(updated_information)
         format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
         format.json { render :show, status: :ok, location: @tour }
       else
         format.html { render :edit }
         format.json { render json: @tour.errors, status: :unprocessable_entity }
       end
+
+    # respond_to do |format|
+    #   if @tour.update(tour_params)
+    #     format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @tour }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @tour.errors, status: :unprocessable_entity }
+    #   end
     end
   end
 
