@@ -1,0 +1,7 @@
+<%= form_tag({}, {:method => "get"}) do %>
+  <%= label_tag(:q, "Search for Place:") %>
+  <%= text_field_tag(:q) %>
+  <%= hidden_field_tag(:long) %>
+  <%= hidden_field_tag(:lat) %>
+  <%= submit_tag("Search") %>
+<% end %>

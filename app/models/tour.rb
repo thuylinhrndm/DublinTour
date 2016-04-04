@@ -2,8 +2,7 @@ class Tour < ActiveRecord::Base
 	belongs_to :user
 	has_many :posts
 
-	#validates_uniqueness_of :time
-	validates_uniqueness_of :day
+
 	
 	
 	# before_create :check_times_do_not_clash

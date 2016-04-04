@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  resources :maps
+
   resources :users, only: [:index] 
   post 'tours/new'
   resources :profiles

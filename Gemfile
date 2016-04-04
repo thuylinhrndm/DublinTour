@@ -12,6 +12,8 @@ gem 'rails_12factor'
  
 end
 
+gem 'geocoder'
+
 gem 'rdoc-data', '~> 4.1'
 
 gem 'rails-observers'
