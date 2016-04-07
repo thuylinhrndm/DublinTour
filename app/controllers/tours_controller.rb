@@ -14,9 +14,12 @@ class ToursController < ApplicationController
     end
   end
   
+  #Users sign in can see only their tours
   def my_tours
     @tours = Tour.where(user_id: current_user.id).order(created_at: :desc)
   end
+  
+  
 
   # GET /tours
   # GET /tours.json

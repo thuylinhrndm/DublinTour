@@ -28,3 +28,6 @@ A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest:
 +++ TourObserver: The tour of Admin User has been updated. cost: 45.0, 
     tour type: Belfast Day Tour from Dublin, date: 2016-04-25 and time: 09:30 AM
  #####
+----
+A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Book audio Guide: 5 + Basic tour: 20;  Tour: Irish Whiskey Museum Tour in Dublin; Day: 2016-04-11 ; Start at : 09:30 AM
+----

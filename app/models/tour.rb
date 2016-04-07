@@ -13,5 +13,4 @@ class Tour < ActiveRecord::Base
 	 TIMES = ["8:30 AM - 4:30 PM", "9:00 AM - 5:00 PM", "9:30 AM - 5:30 PM"]
 
 
-
 end

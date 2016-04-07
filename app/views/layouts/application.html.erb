@@ -59,7 +59,7 @@
     <% if current_user %>
     <li><%= link_to "View Your Tour", my_tours_path  %> </li>
     <% end %>
-   <% if current_user && current_user.admin == true %>
+   <% if current_user.try(:admin?) %>
     <li><%= link_to "All Tour", tours_path  %> </li>
   <% end %>
    
