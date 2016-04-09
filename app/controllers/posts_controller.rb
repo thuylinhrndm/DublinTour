@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     @post = @tour.posts.build(post_params)
     if @post.save
     # Post saved, redirect to tour page
-    redirect_to tour_post_url(@tour, @post)
+    redirect_to tour_path(@post.tour)
     else
     render :action => "new"
     end

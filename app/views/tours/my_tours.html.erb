@@ -24,6 +24,7 @@
         <td><%= tour.time.strftime("%H:%M %p")  %></td>
         <td><%= tour.description %></td>
         <td><%= link_to 'Show', tour %>
+        <%= link_to 'Review', new_tour_post_path(tour) %>
         <% if current_user.admin? %> 
        | <%= link_to 'Edit', edit_tour_path(tour) %>
         <%= button_to 'Destroy', tour, method: :delete, class: 'small button round', data: { confirm: 'Are you sure?' } %></td>

@@ -28,7 +28,8 @@
   <ul class="inline-list">
     <% if user_signed_in? %>
     <li style="color:white">Signed in as: <%= current_user.email %></li>
-    <li><%= link_to "My Profile", profiles_path %></li>
+    <li><%= link_to "My Profile", profile_path(current_user.profile) %></li>
+      
     <li><%= link_to "Profile Setting", edit_user_registration_path %></li>
     <li><%= button_to "Sign Out", destroy_user_session_path, class: 'small button round', method: :delete %></li>
     <% else %>

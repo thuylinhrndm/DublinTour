@@ -9,7 +9,7 @@
       <th>Lastname</th>
       <th>Address</th>
       <th>User</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -20,9 +20,7 @@
         <td><%= profile.lastname %></td>
         <td><%= profile.address %></td>
         <td><%= profile.user %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= button_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', profile %>  | <%= link_to 'Edit', edit_profile_path(profile) %> <%= button_to 'Destroy', profile, class: 'small button round',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

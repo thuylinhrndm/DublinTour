@@ -25,6 +25,12 @@ class ToursController < ApplicationController
   # GET /tours.json
   def index
     @tours = Tour.all.order(created_at: :desc)
+    
+    if params[:search]
+    @tours = Tour.search(params[:search]).order(created_at: :desc)
+    else
+    @tours = Tour.all.order(created_at: :desc)
+    end
   end
   
   # GET /tours/1
