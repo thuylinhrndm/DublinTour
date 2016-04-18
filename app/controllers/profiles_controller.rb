@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
   
   def index
     @profiles = Profile.all
-    respond_with(@profiles)
+    #respond_with(@profiles)
   end
 
   def show
