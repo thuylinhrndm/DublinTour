@@ -1,33 +1,8 @@
-A new tour added: Book audio Guide: 5 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-03-23 ; Start at : 09:00 AM
-A new tour added: Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-03-23 ; Start at : 09:30 AM
-A new tour added: Hotel pickup and drop-off: 10 + Basic tour: 20;  Tour: Wicklow Mountains Tour from Dublin Ireland; Day: 2016-03-20 ; Start at : 09:00 AM
-A new tour added: Basic tour: 20;  Tour: Wicklow Mountains Tour from Dublin Ireland; Day: 2016-04-20 ; Start at : 08:30 AM
-A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Basic tour: 20;  Tour: Belfast Day Tour from Dublin; Day: 2016-03-25 ; Start at : 09:00 AM
-A new tour added: ticket for places of interest: 10 + Basic tour: 20;  Tour: Irish Whiskey Museum Tour in Dublin; Day: 2016-03-23 ; Start at : 09:30 AM
-A new tour added: Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-03-24 ; Start at : 08:30 AM
-A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Book audio Guide: 5 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-05-22 ; Start at : 08:30 AM
------------------------
-A new tour added: Book audio Guide: 5 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-03-28 ; Start at : 09:30 AM
-------------------------------
-----
-A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-03-28 ; Start at : 08:30 AM
-----
-----
-A new tour added: Hotel pickup and drop-off: 10 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-06-26 ; Start at : 08:30 AM
-----
-----
-A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Basic tour: 20;  Tour: Belfast Day Tour from Dublin; Day: 2016-05-26 ; Start at : 09:00 AM
-----
-###############Observer Demo:#
-+++ TourObserver: The tour of Admin User has been updated. cost 45.0
-##############################
-## Observer Demo:#
-+++ TourObserver: The tour of Admin User has been updated. cost 20.0, tour type Belfast Day Tour from Dublin, date 2016-04-25 and time 2000-01-01 08:30:00 UTC
- #####
-## Observer Demo:#
-+++ TourObserver: The tour of Admin User has been updated. cost: 45.0, 
-    tour type: Belfast Day Tour from Dublin, date: 2016-04-25 and time: 09:30 AM
- #####
-----
-A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Book audio Guide: 5 + Basic tour: 20;  Tour: Irish Whiskey Museum Tour in Dublin; Day: 2016-04-11 ; Start at : 09:30 AM
-----
+
+
+---------------------------------------- </br>
+---------------------------------------- </br>
+A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Book audio Guide: 5 + Basic tour: 20;  Tour: Irish Whiskey Museum Tour in Dublin; Day: 2016-05-02 ; Start at : 08:30 AM
+----------------------------------------</br>
+A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Basic tour: 20;  Tour: Kilkenny/Dunmore East/Waterford Tour; Day: 2016-04-18 ; Start at : 08:30 AM
+----------------------------------------

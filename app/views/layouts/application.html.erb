@@ -28,10 +28,15 @@
   <ul class="inline-list">
     <% if user_signed_in? %>
     <li style="color:white">Signed in as: <%= current_user.email %></li>
-    <li><%= link_to "My Profile", profile_path(current_user.profile) %></li>
-      
+    <!--view user profile-->
+    <li><%= link_to "My Profile", profile_path(current_user.profile.id) %></li>
+    <!--view all user profile-->
+      <%  unless current_user.admin? %>
+      <li><%= link_to "Users Profile",  profiles_path %></li>
+     <% end %>
     <li><%= link_to "Profile Setting", edit_user_registration_path %></li>
     <li><%= button_to "Sign Out", destroy_user_session_path, class: 'small button round', method: :delete %></li>
+   
     <% else %>
     <li><%= link_to "Sign up now", new_user_registration_path %></li>
     <li><%= link_to "Log In", new_user_session_path %></li>
@@ -39,13 +44,6 @@
     
   </ul>
 
-<ul class="inline-list hide-for-small-only account-action"></ul>
-<ul class="inline-list">
-   
-  <!--<li><%= text_field_tag :search, params[:search]  %></li>-->
-  <!--<li ><%= submit_tag "Search", :name => nil , class: 'small button round'%></li>-->
-  
-</ul>
 
 </nav>
 <header class="header">
@@ -56,12 +54,16 @@
   <ul class="header-subnav">
     
      <li><%= link_to "Home", home_index_path %></li>
+     <!--You need to sign in or sign up before book a tour -->
     <li><%= link_to 'Book A Tour', new_tour_path %></li>
+    <!--Current user sign in as user can view own tours -->
     <% if current_user %>
     <li><%= link_to "View Your Tour", my_tours_path  %> </li>
     <% end %>
+    <!--Current user sign in is admin can view all the tours of all users -->
    <% if current_user.try(:admin?) %>
     <li><%= link_to "All Tour", tours_path  %> </li>
+    <li><%= link_to "Tours Log", log_tours_path  %> </li>
   <% end %>
    
   </ul>

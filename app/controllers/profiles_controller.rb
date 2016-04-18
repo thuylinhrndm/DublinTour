@@ -53,7 +53,7 @@ class ProfilesController < ApplicationController
     @profile.destroy
     respond_with(@profile)
   end
-
+#find profile by id
   private
     def set_profile
       @profile = Profile.find(params[:id])

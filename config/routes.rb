@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'my_tours', to: 'tours#my_tours', as: 'my_tours'
+  get 'log_tours', to: 'tours#log_tours', as: 'log_tours'
   
 
   devise_for :users

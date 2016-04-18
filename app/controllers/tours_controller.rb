@@ -14,18 +14,22 @@ class ToursController < ApplicationController
     end
   end
   
-  #Users sign in can see only their tours
+  #View tours for a current user
   def my_tours
     @tours = Tour.where(user_id: current_user.id).order(created_at: :desc)
   end
   
+  def log_tours
+   
+  end
   
 
   # GET /tours
   # GET /tours.json
   def index
     @tours = Tour.all.order(created_at: :desc)
-    
+   
+    #Search functionality
     if params[:search]
     @tours = Tour.search(params[:search]).order(created_at: :desc)
     else
@@ -58,7 +62,7 @@ class ToursController < ApplicationController
     @tour.day = Date.new(params[:tour]["day(1i)"].to_i,params[:tour]["day(2i)"].to_i,params[:tour]["day(3i)"].to_i)
     @tour.time = params[:tour][:time]
     
-      # create an instance/object of a BasicTour
+     # create an instance/object of a BasicTour
       mytour = BasicTour.new(@tour.tourtype, @tour.day, @tour.time)
     
     # add the extra features to the new tour
@@ -81,11 +85,10 @@ class ToursController < ApplicationController
    @tour.description = mytour.details
   
     
-     # retrieve the instance/object of the TourLogger class
+    # retrieve the instance/object of the TourLogger class
     logger = TourLogger.instance
-    logger.logInformation("----")
-    logger.logInformation("A new tour added: " + @tour.description)
-     logger.logInformation("----")
+    logger.logInformation("A new tour added: " + @tour.description )
+    logger.logInformation("----------------------------------------")
     
 
     respond_to do |format|
@@ -157,14 +160,7 @@ class ToursController < ApplicationController
         format.json { render json: @tour.errors, status: :unprocessable_entity }
       end
 
-    # respond_to do |format|
-    #   if @tour.update(tour_params)
-    #     format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @tour }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @tour.errors, status: :unprocessable_entity }
-    #   end
+    
     end
   end
 

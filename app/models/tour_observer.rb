@@ -8,10 +8,10 @@ class TourObserver < ActiveRecord::Observer
     @logger = TourLogger.instance
     
     # use the logger to log/record a message about the updated tour
-    @logger.logInformation("## Observer Demo:#") 
+    @logger.logInformation("############ Observer Demo:###########") 
     @logger.logInformation("+++ TourObserver: The tour of #{record.firstname} #{record.lastname} has been updated. cost: #{record.cost}, 
     tour type: #{record.tourtype}, date: #{record.day} and time: #{record.time.strftime("%H:%M %p")}")
-    @logger.logInformation(" #####") 
+    @logger.logInformation(" ###################################") 
     
     end 
 end
