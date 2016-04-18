@@ -29,9 +29,9 @@
     <% if user_signed_in? %>
     <li style="color:white">Signed in as: <%= current_user.email %></li>
     <!--view user profile-->
-    <li><%= link_to "My Profile", profile_path(current_user.profile.id) %></li>
+    <li><%= link_to "My Profile", profiles_path(current_user.profile) %></li>
     <!--view all user profile-->
-      <%  unless current_user.admin? %>
+      <%  if current_user.admin? %>
       <li><%= link_to "Users Profile",  profiles_path %></li>
      <% end %>
     <li><%= link_to "Profile Setting", edit_user_registration_path %></li>
