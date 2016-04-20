@@ -13,7 +13,12 @@ class ProfilesController < ApplicationController
     end
   end
   
-  
+  def my_profile
+    @profile = Profile.find_by_user_id(current_user.id) 
+        redirect_to "/profiles/#{@profile.id}" 
+  end
+    
+
   
   def index
     @profiles = Profile.all

@@ -6,3 +6,9 @@ A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest:
 ----------------------------------------</br>
 A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Basic tour: 20;  Tour: Kilkenny/Dunmore East/Waterford Tour; Day: 2016-04-18 ; Start at : 08:30 AM
 ----------------------------------------
+A new tour added: Hotel pickup and drop-off: 10 + Book audio Guide: 5 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-04-26 ; Start at : 09:00 AM
+----------------------------------------
+A new tour added: ticket for places of interest: 10 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-06-05 ; Start at : 08:30 AM
+----------------------------------------
+A new tour added: Hotel pickup and drop-off: 10 + ticket for places of interest: 10 + Basic tour: 20;  Tour: Historic Old Dublin Walking Tour; Day: 2016-05-11 ; Start at : 08:30 AM
+----------------------------------------

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'my_tours', to: 'tours#my_tours', as: 'my_tours'
   get 'log_tours', to: 'tours#log_tours', as: 'log_tours'
   
+  get 'my_profile', to: 'profiles#my_profile', as: 'my_profile'
+  
 
   devise_for :users
   
