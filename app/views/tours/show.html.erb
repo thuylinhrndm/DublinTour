@@ -34,7 +34,14 @@
   </p>
   
   <%= link_to 'Edit', edit_tour_path(@tour) %> |
+  <!-- If user is admin go back to all tour-->
+  <%  if current_user.admin? %>
   <%= link_to 'Back', tours_path %>
+  
+  <!-- else show only user toursr-->
+   <% else %>
+   <%= link_to 'Back', my_tours_path %>
+   <% end %>
 
 </div>
 
