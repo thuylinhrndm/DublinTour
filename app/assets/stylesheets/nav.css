@@ -60,7 +60,7 @@
 
 .header {
   text-align: center;
-  background: url("banner.jpg") no-repeat center center;
+  background-image: url("banner.jpg");
   background-size: cover;
   padding: 4rem; }
   .header .main-header {
