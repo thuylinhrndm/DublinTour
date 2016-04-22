@@ -26,6 +26,8 @@ module DublinTour
 
   #config.active_record.observers = :model1_observer, :model2_observer 
   config.active_record.observers = :tour_observer
+  config.serve_static_assets = true
+
 
   end
 end

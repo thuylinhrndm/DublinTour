@@ -60,7 +60,7 @@
 
 .header {
   text-align: center;
-  background-image: url("banner.jpg");
+  background: url("http://www.johnsiskandson.com/sites/default/files/project/188/2043-convention-centre-dublin.jpg") no-repeat center center;
   background-size: cover;
   padding: 4rem; }
   .header .main-header {
