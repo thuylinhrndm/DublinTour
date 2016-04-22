@@ -86,7 +86,7 @@
 
 
 .form-style-10{
-    width:450px;
+    width:1200px;
     padding:30px;
     margin:40px auto;
     background: #FFF;
@@ -9299,11 +9299,11 @@ th.hide-for-touch {
 
 .header {
   text-align: center;
-  background: url("https://static.pexels.com/photos/6894/summer-photographer-pier-adventure-large.jpg") no-repeat center center;
+  background: url("banner.jpg") no-repeat center center;
   background-size: cover;
   padding: 4rem; }
   .header .main-header {
-    color: #666; }
+    color: #ffffff; }
 
 .header-subnav {
   float: none;
@@ -9431,7 +9431,7 @@ th.hide-for-touch {
 /* line 99, /home/ubuntu/workspace/app/assets/stylesheets/nav.scss */
 .header {
   text-align: center;
-  background: url("https://static.pexels.com/photos/6894/summer-photographer-pier-adventure-large.jpg") no-repeat center center;
+  background: url("https://dublincityrentals.com/wp-content/uploads/2015/05/developers-corporate-business-banner.jpg") no-repeat center center;
   background-size: cover;
   padding: 4rem;
 }
