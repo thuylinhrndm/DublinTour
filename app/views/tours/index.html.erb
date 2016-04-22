@@ -40,6 +40,7 @@
         <td><%= link_to 'Show', tour %>
         <!-- Only show if current user is admin-->
        <% if current_user.admin? %>
+       | <%= link_to 'Review', tour_posts_path(tour) %>
        | <%= link_to 'Edit', edit_tour_path(tour) %>
         <%= button_to 'Destroy', tour, method: :delete, class: 'small button round', data: { confirm: 'Are you sure?' } %></td>
         <% end %>
